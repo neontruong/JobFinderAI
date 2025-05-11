@@ -1,0 +1,9 @@
+<!-- res/drawable/rounded_user_message.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners
+        android:topLeftRadius="12dp"
+        android:topRightRadius="12dp"
+        android:bottomLeftRadius="12dp"
+        android:bottomRightRadius="0dp" />
+    <solid android:color="#0288D1" />
+</shape>

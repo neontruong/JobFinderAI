@@ -1,0 +1,5 @@
+<!-- res/drawable/other_message_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#E0E0E0" /> <!-- Light gray background for other messages -->
+    <corners android:radius="8dp" />  <!-- Rounded corners -->
+</shape>

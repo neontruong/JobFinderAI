@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F5F5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Thanh tiêu đề (Toolbar) -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/gradient_header"
+            android:elevation="6dp"
+            app:title="Chi tiết CV"
+            app:titleTextColor="#FFFFFF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Phần Ảnh đại diện -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAvatar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="#FFFFFF">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="Ảnh đại diện"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_profile"
+                    app:civ_border_color="#0288D1"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Phần Thông tin cơ bản -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardBasicInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:layout_constraintTop_toBottomOf="@id/cardAvatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:id="@+id/tvBasicInfoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thông tin cơ bản"
+                    android:textColor="#212121"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFullName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Họ và tên: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvBasicInfoTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvJobTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Chức danh: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvFullName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHighestEducation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Bằng cấp cao nhất: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvJobTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvExperience"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Kinh nghiệm: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvHighestEducation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Số điện thoại: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvExperience"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Email: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvPhone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvWorkArea"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Khu vực làm việc: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvEmail"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Địa chỉ: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvWorkArea"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvGender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Giới tính: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvAddress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDateOfBirth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Ngày sinh: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvGender"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvSalary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Mức lương: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvDateOfBirth"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvLinkedin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="LinkedIn: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvSalary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Phần Thông tin hồ sơ -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDetailedInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:layout_constraintTop_toBottomOf="@id/cardBasicInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:id="@+id/tvDetailsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thông tin hồ sơ"
+                    android:textColor="#212121"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvObjective"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Mục tiêu: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailsTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHobbies"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Sở thích: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvObjective"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <!-- RecyclerView cho Kinh nghiệm làm việc -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvWorkExperience"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintTop_toBottomOf="@id/tvHobbies"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <!-- RecyclerView cho Kỹ năng -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSkills"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintTop_toBottomOf="@id/rvWorkExperience"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <!-- RecyclerView cho Kinh nghiệm học vấn -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvEducationExperience"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintTop_toBottomOf="@id/rvSkills"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAdditionalInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Thông tin bổ sung: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/rvEducationExperience"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCreatedAt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Ngày tạo: N/A"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="#F5F5F5"
+                    android:textColor="#212121"
+                    app:layout_constraintTop_toBottomOf="@id/tvAdditionalInfo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

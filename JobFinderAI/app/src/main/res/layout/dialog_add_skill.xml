@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Skill Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSkillName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/gray"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSkillName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tên kỹ năng"
+                android:inputType="text"
+                android:paddingStart="8dp"
+                android:contentDescription="Tên kỹ năng" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Skill Description -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSkillDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/gray"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSkillDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mô tả kỹ năng"
+                android:minLines="3"
+                android:inputType="textMultiLine"
+                android:paddingStart="8dp"
+                android:contentDescription="Mô tả kỹ năng" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

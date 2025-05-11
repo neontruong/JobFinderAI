@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="292dp"
+        android:layout_height="267dp"
+        android:layout_marginTop="44dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="Logo ứng dụng"
+        android:src="@drawable/logo333"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <!-- Nhập Email -->
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/rounded_input_background"
+        android:elevation="4dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:textColor="#212121"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+
+    <!-- Nhập Mật khẩu -->
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_input_background"
+        android:elevation="4dp"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textColor="#212121"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toStartOf="@id/btnTogglePassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editEmail" />
+
+    <!-- Nút Hiển thị/Mật khẩu -->
+    <ImageButton
+        android:id="@+id/btnTogglePassword"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Ẩn/Hiện mật khẩu"
+        android:src="@drawable/ic_visibility"
+        app:tint="#212121"
+        app:layout_constraintBottom_toBottomOf="@id/editPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editPassword" />
+
+    <!-- Checkbox Ghi nhớ đăng nhập -->
+    <CheckBox
+        android:id="@+id/checkboxRememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Ghi nhớ đăng nhập"
+        android:textColor="#212121"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editPassword" />
+
+    <!-- Nút Đăng nhập -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/gradient_button"
+        android:elevation="6dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="Đăng nhập"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkboxRememberMe" />
+
+    <!-- Nút Đăng ký -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/outline_button"
+        android:elevation="2dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="Đăng ký"
+        android:textAllCaps="false"
+        android:textColor="#0288D1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+    <!-- Quên mật khẩu -->
+    <TextView
+        android:id="@+id/tv_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/underline_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="Quên mật khẩu?"
+        android:textColor="#0288D1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnRegister" />
+
+    <!-- Ảnh trang trí -->
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="145dp"
+        android:layout_height="114dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_forgot_password"
+        app:srcCompat="@drawable/cloud" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="171dp"
+        android:layout_height="392dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgLogo"
+        app:layout_constraintEnd_toEndOf="@+id/editEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/cloud" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

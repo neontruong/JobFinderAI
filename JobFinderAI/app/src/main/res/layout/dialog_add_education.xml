@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- School Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSchoolName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/gray"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSchoolName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tên trường"
+                android:inputType="text"
+                android:paddingStart="8dp"
+                android:contentDescription="Tên trường học" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Major -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMajor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/gray"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMajor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Chuyên ngành"
+                android:inputType="text"
+                android:paddingStart="8dp"
+                android:contentDescription="Chuyên ngành học" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Start Date -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/gray"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ngày bắt đầu"
+                android:inputType="none"
+                android:focusable="false"
+                android:paddingStart="8dp"
+                android:contentDescription="Ngày bắt đầu học" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- End Date -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEndDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/gray"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ngày kết thúc"
+                android:inputType="none"
+                android:focusable="false"
+                android:paddingStart="8dp"
+                android:contentDescription="Ngày kết thúc học" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Description -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/gray"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mô tả chi tiết"
+                android:minLines="3"
+                android:inputType="textMultiLine"
+                android:paddingStart="8dp"
+                android:contentDescription="Mô tả chi tiết về học vấn" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

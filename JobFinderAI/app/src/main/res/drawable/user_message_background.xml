@@ -1,0 +1,5 @@
+<!-- res/drawable/user_message_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#007AFF" /> <!-- Blue background for user messages -->
+    <corners android:radius="8dp" />  <!-- Rounded corners -->
+</shape>

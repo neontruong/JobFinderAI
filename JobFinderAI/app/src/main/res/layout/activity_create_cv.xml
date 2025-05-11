@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F5F5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Thanh tiêu đề (Toolbar) -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/gradient_header"
+            android:elevation="6dp"
+            app:title="Tạo CV"
+            app:titleTextColor="#FFFFFF"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Phần 1: Thông tin cơ bản -->
+        <TextView
+            android:id="@+id/tvBasicInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Thông tin cơ bản"
+            android:textColor="#212121"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <!-- Ảnh đại diện -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="Ảnh đại diện"
+            app:civ_border_color="#0288D1"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBasicInfo" />
+
+        <!-- Họ và tên -->
+        <TextView
+            android:id="@+id/tvFullNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Họ và tên"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivAvatar" />
+
+        <EditText
+            android:id="@+id/etFullName"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:hint="Nhập họ và tên"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input_background"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFullNameLabel" />
+
+        <!-- Nghề nghiệp ứng tuyển -->
+        <TextView
+            android:id="@+id/tvJobTitleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Nghề nghiệp ứng tuyển"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etFullName" />
+
+        <EditText
+            android:id="@+id/etJobTitle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:hint="Nhập nghề nghiệp ứng tuyển"
+            android:inputType="text"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input_background"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvJobTitleLabel" />
+
+        <!-- Bằng cấp cao nhất -->
+        <TextView
+            android:id="@+id/tvEducationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Bằng cấp cao nhất"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etJobTitle" />
+
+        <Spinner
+            android:id="@+id/spinnerEducation"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/rounded_input_background"
+            android:padding="8dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEducationLabel" />
+
+        <!-- Kinh nghiệm -->
+        <TextView
+            android:id="@+id/tvExperienceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Kinh nghiệm"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinnerEducation" />
+
+        <Spinner
+            android:id="@+id/spinnerExperience"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/rounded_input_background"
+            android:padding="8dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvExperienceLabel" />
+
+        <!-- Số điện thoại -->
+        <TextView
+            android:id="@+id/tvPhoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Số điện thoại"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinnerExperience" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:hint="Nhập số điện thoại"
+            android:inputType="phone"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input_background"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPhoneLabel" />
+
+        <!-- Email -->
+        <TextView
+            android:id="@+id/tvEmailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Email"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etPhone" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:hint="Nhập email"
+            android:inputType="textEmailAddress"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input_background"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEmailLabel" />
+
+        <!-- Khu vực làm việc -->
+        <TextView
+            android:id="@+id/tvWorkAreaLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Khu vực làm việc"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+        <EditText
+            android:id="@+id/etWorkArea"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:hint="Nhập khu vực làm việc"
+            android:inputType="text"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input_background"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWorkAreaLabel" />
+
+        <!-- Địa chỉ chi tiết -->
+        <TextView
+            android:id="@+id/tvAddressLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Địa chỉ chi tiết"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etWorkArea" />
+
+        <EditText
+            android:id="@+id/etAddress"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:hint="Nhập địa chỉ chi tiết"
+            android:inputType="text"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input_background"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddressLabel" />
+
+        <!-- Giới tính -->
+        <TextView
+            android:id="@+id/tvGenderLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Giới tính"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etAddress" />
+
+        <Spinner
+            android:id="@+id/spinnerGender"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/rounded_input_background"
+            android:padding="8dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvGenderLabel" />
+
+        <!-- Ngày tháng năm sinh -->
+        <TextView
+            android:id="@+id/tvDateOfBirthLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ngày tháng năm sinh"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinnerGender" />
+
+        <EditText
+            android:id="@+id/etDateOfBirth"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:hint="Chọn ngày tháng năm sinh"
+            android:inputType="none"
+            android:focusable="false"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input_background"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDateOfBirthLabel" />
+
+        <!-- Mức lương -->
+        <TextView
+            android:id="@+id/tvSalaryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Mức lương"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDateOfBirth" />
+
+        <Spinner
+            android:id="@+id/spinnerSalary"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/rounded_input_background"
+            android:padding="8dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSalaryLabel" />
+
+        <!-- LinkedIn -->
+        <TextView
+            android:id="@+id/tvLinkedinLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="LinkedIn (dán link)"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinnerSalary" />
+
+        <EditText
+            android:id="@+id/etLinkedin"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:hint="Dán link LinkedIn"
+            android:inputType="textUri"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input_background"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLinkedinLabel" />
+
+        <!-- Phần 2: Thông tin hồ sơ -->
+        <TextView
+            android:id="@+id/tvProfileInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Thông tin hồ sơ"
+            android:textColor="#212121"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etLinkedin" />
+
+        <!-- Mục tiêu -->
+        <TextView
+            android:id="@+id/tvObjectiveLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Mục tiêu"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProfileInfo" />
+
+        <EditText
+            android:id="@+id/etObjective"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="Nhập mục tiêu nghề nghiệp"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input_background"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvObjectiveLabel" />
+
+        <!-- Kinh nghiệm làm việc -->
+        <TextView
+            android:id="@+id/tvWorkExperience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Kinh nghiệm làm việc"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etObjective" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWorkExperience"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
+            android:padding="8dp"
+            android:overScrollMode="never"
+            tools:listitem="@layout/item_work_experience"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWorkExperience" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddWorkExperience"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Thêm kinh nghiệm"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#0288D1"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvWorkExperience" />
+
+        <!-- Kỹ năng -->
+        <TextView
+            android:id="@+id/tvSkills"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Kỹ năng"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnAddWorkExperience" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSkills"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
+            android:padding="8dp"
+            android:overScrollMode="never"
+            tools:listitem="@layout/item_skill"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSkills" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddSkill"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Thêm kỹ năng"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#0288D1"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvSkills" />
+
+        <!-- Kinh nghiệm học vấn -->
+        <TextView
+            android:id="@+id/tvEducationExperience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Kinh nghiệm học vấn"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnAddSkill" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEducationExperience"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
+            android:padding="8dp"
+            android:overScrollMode="never"
+            tools:listitem="@layout/item_education"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEducationExperience" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddEducation"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Thêm học vấn"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#0288D1"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvEducationExperience" />
+
+        <!-- Sở thích -->
+        <TextView
+            android:id="@+id/tvHobbiesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Sở thích"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnAddEducation" />
+
+        <Spinner
+            android:id="@+id/spinnerHobbies"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/rounded_input_background"
+            android:padding="8dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHobbiesLabel" />
+
+        <!-- Thông tin khác -->
+        <TextView
+            android:id="@+id/tvAdditionalInfoLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Thông tin khác"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinnerHobbies" />
+
+        <EditText
+            android:id="@+id/etAdditionalInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="Nhập thông tin khác"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input_background"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAdditionalInfoLabel" />
+
+        <!-- Nút lưu CV -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveCV"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Lưu CV"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#0288D1"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etAdditionalInfo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

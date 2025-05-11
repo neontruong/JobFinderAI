@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#FFFFFF">
+
+        <!-- Tên trường -->
+        <TextView
+            android:id="@+id/tvSchoolName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đại học Bách Khoa Hà Nội"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#212121"
+            tools:text="Đại học Bách Khoa Hà Nội" />
+
+        <!-- Ngành học -->
+        <TextView
+            android:id="@+id/tvMajor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Công nghệ thông tin"
+            android:textSize="14sp"
+            android:textColor="#424242"
+            tools:text="Công nghệ thông tin" />
+
+        <!-- Thời gian -->
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="2018 - 2022"
+            android:textSize="12sp"
+            android:textColor="#757575"
+            tools:text="2018 - 2022" />
+
+        <!-- Mô tả -->
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Hoàn thành chương trình học với GPA 3.5/4.0"
+            android:textSize="14sp"
+            android:textColor="#424242"
+            tools:text="Hoàn thành chương trình học với GPA 3.5/4.0" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

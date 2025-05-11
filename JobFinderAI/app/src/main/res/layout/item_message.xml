@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Tin nhắn của người dùng -->
+    <TextView
+        android:id="@+id/tvUserMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/user_message_background"
+        android:padding="8dp"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:visibility="gone"/>
+
+    <!-- Tin nhắn của bot -->
+    <LinearLayout
+        android:id="@+id/botMessageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvBotMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@drawable/bot_message_bg"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:lineSpacingMultiplier="1.3"
+        android:paddingStart="16dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewJobs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnOpenFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="8dp"
+            android:text="Mở file"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnSendEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:text="Gửi Email"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

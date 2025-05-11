@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.home.JobDetailActivity">
+
+    <!-- AppBar với tiêu đề -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_header"
+        android:elevation="6dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Chi tiết công việc"
+            app:titleTextColor="#FFFFFF"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Nội dung chính -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Logo công ty và tiêu đề -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <ImageView
+                        android:id="@+id/ivCompanyLogo"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/company_logo_description"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/circle_background"
+                        tools:src="@drawable/ic_profile"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvJobTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Lập trình viên Java"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121"
+                        android:gravity="center"
+                        android:layout_marginTop="12dp"
+                        tools:text="Lập trình viên Java"
+                        app:layout_constraintTop_toBottomOf="@id/ivCompanyLogo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvCompany"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="ABC Tech"
+                        android:textSize="18sp"
+                        android:textColor="#757575"
+                        android:gravity="center"
+                        android:layout_marginTop="4dp"
+                        tools:text="ABC Tech"
+                        app:layout_constraintTop_toBottomOf="@id/tvJobTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Mô tả công ty -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCompanyDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toBottomOf="@id/cardHeader"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/tvCompanyDescriptionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mô tả công ty"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvCompanyDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:textSize="16sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="8dp"
+                        tools:text="Good company description"
+                        app:layout_constraintTop_toBottomOf="@id/tvCompanyDescriptionTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Địa điểm và lương -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLocationSalary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toBottomOf="@id/cardCompanyDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/tvLocationTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Địa điểm"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvLocation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Hà Nội, Việt Nam (Có thể làm việc từ xa)"
+                        android:textSize="16sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="8dp"
+                        tools:text="Hà Nội, Việt Nam (Remote)"
+                        app:layout_constraintTop_toBottomOf="@id/tvLocationTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvSalaryTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mức lương"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvLocation"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvSalary"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="$20,000.00"
+                        android:textSize="16sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="8dp"
+                        tools:text="$20,000.00"
+                        app:layout_constraintTop_toBottomOf="@id/tvSalaryTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Mô tả công việc -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardJobDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toBottomOf="@id/cardLocationSalary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/tvJobDescriptionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mô tả công việc"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Chương trình đang tìm kiếm một lập trình viên Java có kinh nghiệm để tham gia vào đội ngũ phát triển phần mềm của công ty. Ứng viên sẽ chịu trách nhiệm thiết kế, phát triển và bảo trì các ứng dụng web sử dụng Spring Boot, Hibernate, và RESTful API."
+                        android:textSize="16sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="8dp"
+                        tools:text="Job description..."
+                        app:layout_constraintTop_toBottomOf="@id/tvJobDescriptionTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Liên hệ -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardContact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toBottomOf="@id/cardJobDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/tvContactTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thông tin liên hệ"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvContactPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Phone: +84 123 456 789"
+                        android:textSize="16sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="8dp"
+                        tools:text="Phone: +84 123 456 789"
+                        app:layout_constraintTop_toBottomOf="@id/tvContactTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvContactEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Email: hr@abctech.com"
+                        android:textSize="16sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="8dp"
+                        tools:text="Email: hr@abctech.com"
+                        app:layout_constraintTop_toBottomOf="@id/tvContactPhone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Ngày đăng -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPostedAt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toBottomOf="@id/cardContact"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/tvPostedAtTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày đăng"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPostedAt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="March 28, 2025"
+                        android:textSize="16sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="8dp"
+                        tools:text="March 28, 2025"
+                        app:layout_constraintTop_toBottomOf="@id/tvPostedAtTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Dòng chứa các nút: Gọi điện, Zalo, và Ứng tuyển -->
+            <LinearLayout
+                android:id="@+id/actionButtonsLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintTop_toBottomOf="@id/cardPostedAt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- Icon Gọi điện -->
+                <ImageView
+                    android:id="@+id/ivCall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_phone"
+                    android:contentDescription="Gọi điện"
+                    android:background="@drawable/circle_background_icon"
+                    android:padding="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- Icon Zalo -->
+                <ImageView
+                    android:id="@+id/ivZalo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_zalo"
+                    android:contentDescription="Nhắn tin qua Zalo"
+                    android:background="@drawable/circle_background_icon"
+                    android:padding="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- Nút Ứng tuyển ngay -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnApply"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:text="Ứng tuyển ngay"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    android:backgroundTint="#0288D1"
+                    app:cornerRadius="12dp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

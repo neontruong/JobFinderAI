@@ -1,0 +1,5 @@
+<!-- res/drawable/status_pending_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFA500" /> <!-- Màu cam -->
+    <corners android:radius="4dp" />
+</shape>

@@ -1,0 +1,18 @@
+<resources>
+    <string-array name="education_levels">
+        <item>High School</item>
+        <item>Bachelor\'s Degree</item>
+        <item>Master\'s Degree</item>
+        <item>PhD</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="industry_options">
+        <item>Information Technology</item>
+        <item>Finance</item>
+        <item>Healthcare</item>
+        <item>Education</item>
+        <item>Marketing</item>
+        <item>Other</item>
+    </string-array>
+</resources>

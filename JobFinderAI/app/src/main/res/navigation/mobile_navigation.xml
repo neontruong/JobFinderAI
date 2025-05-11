@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.jobfinder01.ui.home.HomeFragment"
+        android:label="@string/home_title"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_job_applications"
+        android:name="com.example.jobfinder01.ui.jobapplications.JobApplicationsFragment"
+        android:label="@string/job_applications_title"
+        tools:layout="@layout/fragment_job_applications" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.jobfinder01.ui.notifications.NotificationsFragment"
+        android:label="@string/notifications_title"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.jobfinder01.ui.profile.ProfileFragment"
+        android:label="@string/profile_title"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

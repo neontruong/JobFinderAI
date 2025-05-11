@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- res/drawable/animated_ic_ai_head.xml -->
+    <animated-vector
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:drawable="@drawable/ic_ai_head">
+        <target
+            android:name="main_circle"
+            android:animation="@animator/scale_animator" />
+        <target
+            android:name="nodes"
+            android:animation="@animator/nodes_animator" />
+        <target
+            android:name="lines"
+            android:animation="@animator/lines_animator" />
+    </animated-vector>
+</set>

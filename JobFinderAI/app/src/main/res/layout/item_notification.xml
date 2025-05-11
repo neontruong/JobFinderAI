@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#FFFFFF">
+
+        <!-- Tiêu đề thông báo -->
+        <TextView
+            android:id="@+id/tvNotificationTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ứng tuyển của bạn đã được xem"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#212121"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvTime" />
+
+        <!-- Thời gian -->
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:30 AM"
+            android:textSize="12sp"
+            android:textColor="#757575"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/tvNotificationTitle"
+            app:layout_constraintEnd_toStartOf="@id/btnDelete"
+            app:layout_constraintTop_toTopOf="@id/tvNotificationTitle"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvNotificationTitle" />
+
+        <!-- Nội dung thông báo -->
+        <TextView
+            android:id="@+id/tvNotificationContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Công ty ABC đã xem đơn ứng tuyển của bạn cho vị trí Software Developer."
+            android:textColor="#424242"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNotificationTitle" />
+
+        <!-- Nút xóa -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginBottom="9dp"
+            android:backgroundTint="#D32F2F"
+            android:contentDescription="Nút xóa thông báo"
+            android:text="Xóa"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvNotificationContent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

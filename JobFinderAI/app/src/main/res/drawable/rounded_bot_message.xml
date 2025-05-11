@@ -1,0 +1,9 @@
+<!-- res/drawable/rounded_bot_message.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners
+        android:topLeftRadius="12dp"
+        android:topRightRadius="12dp"
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="12dp" />
+    <solid android:color="#E0E0E0" />
+</shape>

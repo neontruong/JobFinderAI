@@ -1,0 +1,47 @@
+<!-- res/drawable/ic_ai_head.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Background glow/shadow -->
+<path
+android:fillColor="#33000000"
+android:pathData="M12,2a10,10,0,1,0,10,10A10,10,0,0,0,12,2z"
+android:translationY="0.5dp"
+android:translationX="0.5dp" />
+    <!-- Main circle with gradient -->
+<path
+android:name="main_circle"
+android:pathData="M12,2a10,10,0,1,0,10,10A10,10,0,0,0,12,2z">
+<aapt:attr name="android:fillColor">
+    <gradient
+        android:startX="0"
+        android:startY="0"
+        android:endX="24"
+        android:endY="24"
+        android:type="linear">
+        <item android:offset="0" android:color="#FF0288D1" />
+        <item android:offset="1" android:color="#FF7C4DFF" />
+    </gradient>
+</aapt:attr>
+</path>
+    <!-- Neural network nodes -->
+<path
+android:name="nodes"
+android:fillColor="#FFFFFF"
+android:pathData="
+            M12,6a1,1,0,1,1,1,-1A1,1,0,0,1,12,6z
+            M8,10a1,1,0,1,1,1,-1A1,1,0,0,1,8,10z
+            M16,10a1,1,0,1,1,1,-1A1,1,0,0,1,16,10z
+            M10,14a1,1,0,1,1,1,-1A1,1,0,0,1,10,14z
+            M14,14a1,1,0,1,1,1,-1A1,1,0,0,1,14,14z" />
+    <!-- Connecting lines -->
+<path
+android:name="lines"
+android:strokeColor="#FFFFFF"
+android:strokeWidth="0.5"
+android:pathData="
+            M12,5L9,9 M9,9L11,13 M11,13L15,13 M15,13L17,9 M17,9L13,5" />
+    </vector>

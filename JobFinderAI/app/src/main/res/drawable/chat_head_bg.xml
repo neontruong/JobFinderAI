@@ -1,0 +1,5 @@
+<!-- res/drawable/chat_head_bg.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#007AFF" />
+    <corners android:radius="30dp" /> <!-- Bo tròn hoàn toàn cho hình tròn -->
+</shape>
